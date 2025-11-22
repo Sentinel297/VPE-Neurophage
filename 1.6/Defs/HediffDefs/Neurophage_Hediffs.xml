@@ -1,0 +1,353 @@
+<Defs>
+<HediffDef>
+	<defName>VPE_Neurophage_NeuralScrambleSTNL</defName>
+	<label>Neural Scramble</label>
+	<description>This creature's neural system is being tampered with, it will be stunned every few seconds.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralScramble</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0.8, 0, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<!-- <statFactors> -->
+				<!-- <Fertility>0</Fertility> -->
+			<!-- </statFactors> -->
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li Class="HediffCompProperties_Disappears">
+		<disappearsAfterTicks>20000</disappearsAfterTicks>
+		<showRemainingTime>true</showRemainingTime>
+		</li>
+	</comps>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_Neurophage_Neurophagy_STNL</defName>
+	<label>Neurophagy level</label>
+	<description>The level of this condition corresponds to the amount of stolen minds/psychic powers.\n\nNeurophagy levels may be used by certain abilities in the Neurophage path.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeurophagyStack</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 0.8, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<!-- <statFactors> -->
+				<!-- <Fertility>0</Fertility> -->
+			<!-- </statFactors> -->
+		</li>
+	</stages>
+	<comps>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>20000</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>true</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_Neurophage_Neurophagy_UpgradeOne_STNL</defName>
+	<label>Neurophagy+</label>
+	<description>Neurophagy has been upgraded, it will now grant a passive increase to psychic sensitivity for each level.</description>
+	<hediffClass>VPE_Neurophage.Hediff_Neurophagy_Upgrade_One</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>9999999</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 0.8, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<statOffsetsBySeverity>
+				<li>
+					<stat>PsychicSensitivity</stat>
+					<valueBySeverity>
+						<points>
+							<li>(0.9, 0)</li>
+							<li>(1, 0.02)</li>
+							<li>(2, 0.04)</li>
+							<li>(9999999, 199999.98</li>
+						</points>
+					</valueBySeverity>
+				</li>
+			</statOffsetsBySeverity>
+		</li>
+	</stages>
+	<comps>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>20000</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>true</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<!-- Neural Field -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_NeuralField_STNL</defName>
+	<label>Neural Field</label>
+	<description>This person is converting Neurophagy levels into raw psychic energy, they will emanate psychic pulses to empower and restore the psyfocus of nearby allies.\n\nThis condition will kill the user if Neurophagy levels hit zero.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralField</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<statFactors>
+				<VPE_PsyfocusCostFactor>0</VPE_PsyfocusCostFactor>
+				<PsychicEntropyGain>0.5</PsychicEntropyGain>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>20000</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>true</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_Neurophage_NeuralRipple_STNL</defName>
+	<label>Neural Ripple</label>
+	<description>This psycaster's psychic prowess is being enhanced by a Neurophage's neural field.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<statFactors>
+				<VPE_PsyfocusCostFactor>0.5</VPE_PsyfocusCostFactor>
+				<PsychicEntropyGain>0.25</PsychicEntropyGain>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li Class="HediffCompProperties_Disappears">
+		<disappearsAfterTicks>61</disappearsAfterTicks>
+		<showRemainingTime>false</showRemainingTime>
+		</li>
+	</comps>
+</HediffDef>
+
+<!-- Neural Gestalt -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_Passive_NeuralGestalt_STNL</defName>
+	<label>Neural Gestalt</label>
+	<description>This person will grant their current amount of Neurophagy levels divided by 2 as experience to nearby allied psycasters every 3 seconds.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralGestalt</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<statFactors>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>61</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>false</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<!-- Neural String -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_NeuralString_Controller_STNL</defName>
+	<label>Neuro-Controller</label>
+	<description>This Neurophage is currently controlling another Psycaster, the Neuro-Controller will share the following with their Neuro-Drones:\n\nSkill levels\nPsyfocus\nMood\nIdeology</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuroController</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<statFactors>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>61</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>false</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_Neurophage_NeuralString_Controlled_STNL</defName>
+	<label>Neuro-Drone</label>
+	<description>This Psycaster is under the influence of a Neurophage.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralControl</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<statFactors>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>61</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>false</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<!-- Neural Nihil -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_Neurannihilation_Source_STNL</defName>
+	<label>Neural Nihil</label>
+	<description>This Neurophage will nullify enemy psycasters who use the banned psycast path.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralNihil</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<statFactors>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>61</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>false</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<HediffDef>
+	<defName>VPE_Neurophage_Neurannihilation_Target_STNL</defName>
+	<label>Neural Nullification</label>
+	<description>This Psycaster is being suppressed by a Neurophage due to being a user of the currently banned path.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralNihilVictim</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 0.6, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<postFactor>0.5</postFactor>
+				</li>
+			</capMods>
+			<statFactors>
+				<PsychicEntropyRecoveryRate>0</PsychicEntropyRecoveryRate>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>301</disappearsAfterTicks>
+			<showRemainingTime>false</showRemainingTime>
+		</li>
+	</comps>
+</HediffDef>
+</Defs>

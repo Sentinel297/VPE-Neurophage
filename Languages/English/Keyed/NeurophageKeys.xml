@@ -1,0 +1,21 @@
+<LanguageData>
+<VPE_Neurophagy_Neuralink_ChooseAmount_STNL>Choose Amount Of Charges To Use: {0}</VPE_Neurophagy_Neuralink_ChooseAmount_STNL>
+<VPE_Neurophagy_Neuralink_Confirm_STNL>Confirm</VPE_Neurophagy_Neuralink_Confirm_STNL>
+
+<VPE_Neurophagy_NeuralOverloadHackChoiceLabel_STNL>Select Hack Method:</VPE_Neurophagy_NeuralOverloadHackChoiceLabel_STNL>
+<VPE_Neurophage_Hack_Detonate_STNL>Detonate</VPE_Neurophage_Hack_Detonate_STNL>
+<VPE_Neurophage_Hack_Steal_STNL>Convert to faction</VPE_Neurophage_Hack_Steal_STNL>
+<VPE_Neurophage_Hack_Hack_STNL>Hack</VPE_Neurophage_Hack_Hack_STNL>
+<VPE_Neurophage_Hack_Biocode_STNL>Toggle Biocoding</VPE_Neurophage_Hack_Biocode_STNL>
+
+<VPE_Neurophage_NeuralString_EndControlAction_STNL>Release</VPE_Neurophage_NeuralString_EndControlAction_STNL>
+
+<VPE_Neurophage_NeuralNihil_NoCurrentlyBannedPath>Inactive</VPE_Neurophage_NeuralNihil_NoCurrentlyBannedPath>
+
+<!-- Neural String -->
+
+<VPE_Neurophage_NeuralString_TargetTooHighLevelForCaster_STNL>{0}'s Psylink level is superior to {1}'s Psylink level.</VPE_Neurophage_NeuralString_TargetTooHighLevelForCaster_STNL>
+
+<VPE_Neurophage_NeuralString_NeurophagyStacksTooLow_STNL>{0} doesn't have enough Neurophagy levels to control {1}.</VPE_Neurophage_NeuralString_NeurophagyStacksTooLow_STNL>
+<VPE_Neurophage_NeuralString_DroneDiedOrLostHediff_STNL>{0} lost control over {1}.</VPE_Neurophage_NeuralString_DroneDiedOrLostHediff_STNL>
+</LanguageData>

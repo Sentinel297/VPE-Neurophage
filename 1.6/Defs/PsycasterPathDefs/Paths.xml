@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+<!-- Neurophage -->
+
+<VanillaPsycastsExpanded.PsycasterPathDef>
+	<defName>VPE_Neurophage_STNL</defName>
+	<label>Neurophage</label>
+	<description>Neurophages draw power from other creatures, mainly by mimicking the abilities of enemy Psycasters and by absorbing the mind of those unable to use psychic abilities.\n\nThey also possess the ability to influence most technology around them to even the odds when fighting against non psychically aligned opponents.</description>
+	<background>UI_NeurophageSTNL/Tree/NeurophageTreeBase</background>
+	<altBackground>UI_NeurophageSTNL/Tree/NeurophageTreeBase</altBackground>
+	<tab>Misc</tab>
+	<tooltip>Neurophages draw power from other creatures, mainly by mimicking the abilities of enemy Psycasters and by absorbing the mind of those unable to use psychic abilities.\n\nThey also possess the ability to influence most technology around them to even the odds when fighting against non psychically aligned opponents.</tooltip>
+</VanillaPsycastsExpanded.PsycasterPathDef>
+
+</Defs>
