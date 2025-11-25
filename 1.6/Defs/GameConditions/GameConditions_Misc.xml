@@ -1,64 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-<!-- <GameConditionDef> -->
-	<!-- <defName>VPE_Vein_RedMist_STNL</defName> -->
-	<!-- <conditionClass>VPE_Vein.GameCondition_RedMist</conditionClass> -->
-	<!-- <label>Red Mist</label> -->
-	<!-- <description>A thick mist of blood is surrounding the colony, preventing raids and caravans from entering.</description> -->
-	<!-- <letterText>A thick mist of blood is surrounding the colony, preventing raids and caravans from entering.</letterText> -->
-	<!-- <letterDef>PositiveEvent</letterDef> -->
+<GameConditionDef>
+	<defName>VPE_Neurophage_NeuroDissonance_STNL</defName>
+	<conditionClass>VPE_Neurophage.GameCondition_NeuroDissonance</conditionClass>
+	<label>Neural Dissonance</label>
+	<description>Unused content.</description>
+	<letterText>Unused content.</letterText>
+	<letterDef>PositiveEvent</letterDef>
 	<!-- <weatherDef>VPE_Vein_RedMist_STNL</weatherDef> -->
 	<!-- <preventNeutralVisitors>true</preventNeutralVisitors> -->
 	<!-- <preventIncidents>true</preventIncidents> -->
-	<!-- <canAffectAllPlanetLayers>true</canAffectAllPlanetLayers> -->
-	<!-- <canBePermanent>true</canBePermanent> -->
-	<!-- <natural>false</natural> -->
-	<!-- <allowUnderground>false</allowUnderground> -->
-<!-- </GameConditionDef> -->
-  
-  <!-- <WeatherDef> -->
-    <!-- <defName>VPE_Vein_RedMist_STNL</defName> -->
-    <!-- <label>Red Mist</label> -->
-    <!-- <isBad>false</isBad> -->
-    <!-- <canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent> -->
-    <!-- <description>A thick mist of blood is surrounding the colony, its effects determined by the ongoing condition.</description> -->
-    <!-- <favorability>VeryBad</favorability> -->
-    <!-- <perceivePriority>3</perceivePriority> -->
-    <!-- <accuracyMultiplier>1</accuracyMultiplier> -->
-    <!-- <rainRate>1</rainRate> -->
-    <!-- <moveSpeedMultiplier>1</moveSpeedMultiplier> -->
-    <!-- <overlayClasses> -->
-      <!-- <li>WeatherOverlay_BloodFog</li> -->
-      <!-- <li>WeatherOverlay_DeepBloodFog</li>  redder, thinner, more diffuse layer to get around skyoverlay only having 2 texture slots--> 
-    <!-- </overlayClasses> -->
-    <!-- <ambientSounds> -->
-      <!-- <li>Ambient_Wind_Fog</li> -->
-    <!-- </ambientSounds> -->
-    <!-- <skyColorsDay> -->
-      <!-- <sky>(0.8,0.8,0.8)</sky> -->
-      <!-- <shadow>(0.92,0.92,0.92)</shadow> -->
-      <!-- <overlay>(0.5, 0.5, 0.5)</overlay> -->
-      <!-- <saturation>0.9</saturation> -->
-    <!-- </skyColorsDay> -->
-    <!-- <skyColorsDusk> -->
-      <!-- <sky>(1,1,1)</sky> -->
-      <!-- <shadow>(0.92,0.92,0.92)</shadow> -->
-      <!-- <overlay>(0.5, 0.5, 0.5)</overlay> -->
-      <!-- <saturation>0.9</saturation> -->
-    <!-- </skyColorsDusk> -->
-    <!-- <skyColorsNightEdge> -->
-      <!-- <sky>(0.35,0.40,0.45)</sky> -->
-      <!-- <shadow>(0.92,0.92,0.92)</shadow> -->
-      <!-- <overlay>(0.5, 0.5, 0.5)</overlay> -->
-      <!-- <saturation>0.9</saturation> -->
-    <!-- </skyColorsNightEdge> -->
-    <!-- <skyColorsNightMid> -->
-      <!-- <sky>(0.35,0.40,0.45)</sky> -->
-      <!-- <shadow>(0.92,0.92,0.92)</shadow> -->
-      <!-- <overlay>(0.5, 0.5, 0.5)</overlay> -->
-      <!-- <saturation>0.9</saturation> -->
-    <!-- </skyColorsNightMid> -->
-  <!-- </WeatherDef> -->
+	<canAffectAllPlanetLayers>true</canAffectAllPlanetLayers>
+	<canBePermanent>true</canBePermanent>
+	<natural>false</natural>
+	<allowUnderground>true</allowUnderground>
+</GameConditionDef>
 
 </Defs>

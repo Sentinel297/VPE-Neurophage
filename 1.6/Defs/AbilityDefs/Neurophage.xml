@@ -21,13 +21,11 @@
 		<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
 	</targetingParameters>
 	<chance>0</chance>
-	
 	<jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
 	<requireLineOfSight>false</requireLineOfSight>
 	<showUndrafted>True</showUndrafted>
 	<distanceToTarget>1.9</distanceToTarget>
 	<range>999999</range>
-	
 	<radius>0</radius>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
@@ -211,15 +209,61 @@
 			<psyfocusCost>0.10</psyfocusCost>
 			<entropyGain>50</entropyGain>
 			<prerequisites>
-			<li>VPE_Neurophage_NeuralScramble_STNL</li>
+				<li>VPE_Neurophage_NeuralScramble_STNL</li>
 			</prerequisites>
 		</li>
-		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
-		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
-		<!-- <onCaster>true</onCaster> -->
-		<!-- <maintainForDuration>true</maintainForDuration> -->
-		<!-- <maintainForTicks>5</maintainForTicks> -->
-		<!-- </li> -->
+		<!-- Used to ban various abilities that caused errors. DO NOT TOUCH THIS IF YOU DO NOT KNOW WHAT YOU ARE DOING. -->
+		<li Class="VPE_Neurophage.PsychicTakeOverModExt">
+			<bannedTypes>
+				<!-- General -->
+				<li>VEF.Abilities.Ability_SpawnBuilding</li>
+				<!-- Archon -->
+				<li>VanillaPsycastsExpanded.Ability_DrainPsyessence</li>
+				<!-- Chronopath -->
+				<li>VanillaPsycastsExpanded.Chronopath.Ability_TimeQuake</li>
+				<li>VanillaPsycastsExpanded.Chronopath.Ability_AdvanceSeason</li>
+				<!-- Skipmaster -->
+				<li>VanillaPsycastsExpanded.Skipmaster.Ability_Teleport</li>
+				<li>VanillaPsycastsExpanded.Skipmaster.Ability_Skipdoor</li>
+				<!-- Necropath -->
+				<li>VanillaPsycastsExpanded.Ability_Corpsetalk</li>
+				<li>VanillaPsycastsExpanded.Ability_Resurrect</li>
+				<li>VanillaPsycastsExpanded.Ability_SpawnSkeleton</li>
+				<!-- Technomancer -->
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_IncreaseQuality</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Power</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Rock</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Steel</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Psyring</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_ReverseEngineer</li>
+				<!-- Harmonist -->
+				<li>VanillaPsycastsExpanded.Harmonist.Ability_TransmuteStone</li>
+				<li>VanillaPsycastsExpanded.Harmonist.Ability_TransmuteItem</li>
+				<!-- Empath -->
+				<li>VanillaPsycastsExpanded.Ability_ReunionFarskip</li>
+				<!-- Neurophage -->
+				<li>VPE_Neurophage.Ability_Neuralink</li>
+				<li>VPE_Neurophage.Ability_PsychicTheft</li>
+				<li>VPE_Neurophage.Ability_MassNeurophagy</li>
+				<li>VPE_Neurophage.Ability_NeuralInfiltration</li>
+				<li>VPE_Neurophage.Ability_PsychicTakeover</li>
+			</bannedTypes>
+			<VEFAbilityDefs>
+				<!-- Chronopath -->
+				<li>VPE_RaidPause</li>
+				<!-- Nightstalker -->
+				<li>VPE_Obscure</li>
+				<!-- Empath -->
+				<li>VPE_MindWipe</li>
+				<!-- Staticlord -->
+				<li>VPE_Flashstorm</li>
+				<!-- Harmonist -->
+				<li>VPE_Mindcontrol</li>
+			</VEFAbilityDefs>
+			<BannedPaths>
+				<li>VPE_Neurophage_STNL</li>
+			</BannedPaths>
+		</li>
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
 
@@ -501,6 +545,45 @@
 				<li>VPE_Neurophage_Neurannihilation_Source_STNL</li>
 			</hediffsToAdd>
 			<tickCheckInterval>60</tickCheckInterval>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_MassNeurophagy_Ability_STNL</defName>
+	<label>Apex Neurophagy</label>
+	<description>After a 10 seconds meditation period, wipe the Psylink of every Psycaster near the target point (Caster excluded) to convert their Psylink levels into Neurophagy levels.\n\nNon-Psycasters will have their brain destroyed in order to grant a Neurophagy level per destroyed brain.\n\nThis ability will function on corpses in a similar way to Neurophagy.\n\nAdditionally, this ability will ignore allied creatures if there is a target that does not belong to the caster's faction within the area of effect.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/MassNeurophagy</iconPath>
+	<castTime>600</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<range>9.9</range>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetMechs>false</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<radius>2.5</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_MassNeurophagy</abilityClass>
+	<castSound>Psycast_Skip_Entry</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>5</level>
+			<order>3</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>125</entropyGain>
+			<prerequisites>
+				<li>VPE_Neurophage_NeuralField_STNL</li>
+				<li>VPE_Neurophage_Neuralink_STNL</li>
+			</prerequisites>
 		</li>
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
