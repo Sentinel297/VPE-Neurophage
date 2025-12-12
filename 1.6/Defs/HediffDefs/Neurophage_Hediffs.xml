@@ -47,8 +47,7 @@
 	<isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
 	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
-	<modExtensions>
-	</modExtensions>
+	<modExtensions/>
 	<stages>
 		<li>
 			<!-- <statFactors> -->
@@ -267,6 +266,9 @@
 		<li>
 			<statFactors>
 			</statFactors>
+			<disablesNeeds>
+				<li>Joy</li>
+			</disablesNeeds>
 		</li>
 	</stages>
 	<comps>

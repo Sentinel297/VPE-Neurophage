@@ -21,11 +21,13 @@
 		<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
 	</targetingParameters>
 	<chance>0</chance>
+	
 	<jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
 	<requireLineOfSight>false</requireLineOfSight>
 	<showUndrafted>True</showUndrafted>
 	<distanceToTarget>1.9</distanceToTarget>
 	<range>999999</range>
+	
 	<radius>0</radius>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
