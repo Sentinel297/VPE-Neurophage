@@ -127,7 +127,6 @@
 			<hediffsToAdd>
 				<li>VPE_Neurophage_Neurophagy_UpgradeOne_STNL</li>
 			</hediffsToAdd>
-			<tickCheckInterval>60</tickCheckInterval>
 		</li>
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
@@ -224,6 +223,7 @@
 				<!-- Chronopath -->
 				<li>VanillaPsycastsExpanded.Chronopath.Ability_TimeQuake</li>
 				<li>VanillaPsycastsExpanded.Chronopath.Ability_AdvanceSeason</li>
+				<li MayRequire="VPE.Extended.Sentinel">VPE_Extended.Ability_ReturnToZero</li>
 				<!-- Skipmaster -->
 				<li>VanillaPsycastsExpanded.Skipmaster.Ability_Teleport</li>
 				<li>VanillaPsycastsExpanded.Skipmaster.Ability_Skipdoor</li>
@@ -337,7 +337,6 @@
 			<hediffsToAdd>
 				<li>VPE_Neurophage_Passive_NeuralGestalt_STNL</li>
 			</hediffsToAdd>
-			<tickCheckInterval>60</tickCheckInterval>
 		</li>
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
@@ -546,7 +545,6 @@
 			<hediffsToAdd>
 				<li>VPE_Neurophage_Neurannihilation_Source_STNL</li>
 			</hediffsToAdd>
-			<tickCheckInterval>60</tickCheckInterval>
 		</li>
 	</modExtensions>
 </VEF.Abilities.AbilityDef>
