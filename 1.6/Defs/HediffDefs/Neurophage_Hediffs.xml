@@ -8,7 +8,7 @@
 	<minSeverity>0</minSeverity>
 	<maxSeverity>1</maxSeverity>
 	<!-- <lethalSeverity>1</lethalSeverity> -->
-	<defaultLabelColor>(0.8, 0, 0)</defaultLabelColor>
+	<defaultLabelColor>(0, 0.6, 0)</defaultLabelColor>
 	<makesSickThought>false</makesSickThought>
 	<scenarioCanAdd>false</scenarioCanAdd>
 	<isBad>false</isBad>
@@ -182,7 +182,7 @@
 <HediffDef>
 	<defName>VPE_Neurophage_Passive_NeuralGestalt_STNL</defName>
 	<label>Neural Gestalt</label>
-	<description>This person will grant their current amount of Neurophagy levels divided by 2 as experience to nearby allied psycasters every 3 seconds.</description>
+	<description>This person will grant their current amount of Neurophagy levels as experience to nearby allied psycasters every 3 seconds.</description>
 	<hediffClass>VPE_Neurophage.Hediff_NeuralGestalt</hediffClass>
 	<initialSeverity>1</initialSeverity>
 	<minSeverity>0</minSeverity>
@@ -347,9 +347,74 @@
 	<comps>
 		<li Class="HediffCompProperties_DisappearsOnDeath"/>
 		<li Class="HediffCompProperties_Disappears">
-			<disappearsAfterTicks>301</disappearsAfterTicks>
+			<disappearsAfterTicks>900</disappearsAfterTicks>
 			<showRemainingTime>false</showRemainingTime>
 		</li>
 	</comps>
 </HediffDef>
+
+<!-- Transference -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_TransferenceLethargy_STNL</defName>
+	<label>Transference Lethargy</label>
+	<description>Transfering into another creature took a heavy toll on this person's mind, they will need some time before being able to fully use this new body.</description>
+	<hediffClass>VPE_Neurophage.Hediff_TransferenceLethargy</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>2</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 0.6, 0)</defaultLabelColor>
+	<makesSickThought>True</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+			<label>Recovering</label>
+			<statFactorsBySeverity>
+				<li>
+					<stat>MoveSpeed</stat>
+					<valueBySeverity>
+						<points>
+							<li>(0, 1)</li>
+							<li>(0.2, 0.8)</li>
+							<li>(0.4, 0.7)</li>
+							<li>(0.6, 0.6)</li>
+							<li>(1, 0.3)</li>
+						</points>
+					</valueBySeverity>
+				</li>
+				<li>
+					<stat>WorkSpeedGlobal</stat>
+					<valueBySeverity>
+						<points>
+							<li>(0, 1)</li>
+							<li>(0.2, 0.8)</li>
+							<li>(0.4, 0.7)</li>
+							<li>(0.6, 0.6)</li>
+							<li>(1, 0.3)</li>
+						</points>
+					</valueBySeverity>
+				</li>
+			</statFactorsBySeverity>
+		</li>
+		<li>
+			<minSeverity>1.01</minSeverity>
+			<label>Unresponsive</label>
+			<capMods>
+				<li>
+					<capacity>Moving</capacity>
+					<setMax>0</setMax>
+				</li>
+				<li>
+					<capacity>Manipulation</capacity>
+					<setMax>0</setMax>
+				</li>
+			</capMods>
+		</li>
+	</stages>
+</HediffDef>
+
 </Defs>
