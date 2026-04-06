@@ -77,7 +77,7 @@
 		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
 	</targetingParameters>
 	<!-- <chance>0</chance> -->
-	<range>15.9</range>
+	<range>18.9</range>
 	<radius>0</radius>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
@@ -150,7 +150,7 @@
 	</targetingParameters>
 	<chance>0</chance>
 	<requireLineOfSight>false</requireLineOfSight>
-	<range>17.9</range>
+	<range>28.9</range>
 	<radius>0</radius>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
@@ -196,7 +196,7 @@
 		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
 	</targetingParameters>
 	<!-- <chance>0</chance> -->
-	<range>15.9</range>
+	<range>24.9</range>
 	<radius>0</radius>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
@@ -287,7 +287,7 @@
 		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
 	</targetingParameters>
 	<!-- <chance>1</chance> -->
-	<range>15.9</range>
+	<range>28.9</range>
 	<radius>0</radius>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
@@ -553,7 +553,7 @@
 		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
 	</targetingParameters>
 	<!-- <chance>0</chance> -->
-	<range>15.9</range>
+	<range>18.9</range>
 	<radius>0</radius>
 	<needsTicking>true</needsTicking>
 	<goodwillImpact>0</goodwillImpact>
@@ -653,7 +653,7 @@
 	<castTime>15</castTime>
 	<targetMode>Self</targetMode>
 	<abilityClass>VPE_Neurophage.Ability_PassiveGiver</abilityClass>
-		<needsTicking>true</needsTicking>
+	<needsTicking>true</needsTicking>
 	<modExtensions>
 		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 			<path>VPE_Neurophage_STNL</path>
@@ -662,7 +662,7 @@
 			<psyfocusCost>0</psyfocusCost>
 			<entropyGain>70</entropyGain>
 			<prerequisites>
-			<li>VPE_Neurophage_PsychicMimicry_STNL</li>
+				<li>VPE_Neurophage_PsychicMimicry_STNL</li>
 			</prerequisites>
 		</li>
 		<li Class="VPE_Neurophage.Ability_PassiveModExt">
