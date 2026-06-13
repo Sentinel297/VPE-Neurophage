@@ -1,0 +1,41 @@
+<Defs>
+	<SoundDef>
+		<defName>VPE_Neurophage_ApocalypticNeurophagy_Sustainer_STNL</defName>
+		<context>MapOnly</context>
+		<sustain>True</sustain>
+		<maxSimultaneous>1</maxSimultaneous>
+		<maxVoices>1</maxVoices>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>VPE_Neurophage_Sounds_STNL/ApocalypticNeurophagy_Sustainer</clipPath>
+					</li>
+				</grains>
+				<volumeRange>30</volumeRange>
+				<distRange>80</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>VPE_Neurophage_ApocalypticNeurophagy_CastSound_STNL</defName>
+		<context>MapOnly</context>
+		<sustain>False</sustain>
+		<maxSimultaneous>1</maxSimultaneous>
+		<maxVoices>1</maxVoices>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>VPE_Neurophage_Sounds_STNL/ApocalypticNeurophagy_CastSound</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>80</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+</Defs>

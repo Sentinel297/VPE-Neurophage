@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+<!-- Level 1 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_Neurophagy_Ability_STNL</defName>
+	<label>Neurophagy</label>
+	<description>Wipe the target's psylink and absorb its levels to convert them into neurophagy levels.\n\nUsing this ability on a non-psycaster will destroy their brain in order to grant a neurophagy level.\n\nThis ability may be used on corpses and allows the user to convert neurophagy levels into psyfocus.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/Neurophagy</iconPath>
+	<castTime>90</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<canTargetItems>true</canTargetItems>
+		<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+	</targetingParameters>
+	<chance>0</chance>
+	
+	<jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+	<requireLineOfSight>false</requireLineOfSight>
+	<showUndrafted>True</showUndrafted>
+	<distanceToTarget>1.9</distanceToTarget>
+	<range>999999</range>
+	
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_PsychicTheft</abilityClass>
+	<castSound>Psycast_Skip_Entry</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>1</level>
+			<order>1</order>
+			<psyfocusCost>0.07</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<!-- <prerequisites> -->
+			<!-- <li>VPE_Neurophage_NeuralScramble_STNL</li> -->
+			<!-- </prerequisites> -->
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 2 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_NeuralScramble_STNL</defName>
+	<label>Neural scramble</label>
+	<description>Emit psychic radiation that will periodically confuse the target, resulting in them getting stunned every few seconds for a while.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/NeuralScramble</iconPath>
+	<durationTime>7500</durationTime>
+	<durationTimeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<castTime>15</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<!-- <chance>0</chance> -->
+	<range>18.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_NeuralScramble</abilityClass>
+	<castSound>PsycastPsychicPulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>2</level>
+			<order>1</order>
+			<psyfocusCost>0.05</psyfocusCost>
+			<entropyGain>15</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_Neurophagy_Ability_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_NeurophagyPassiveUpgrade_STNL</defName>
+	<label>Passive: Neurophagy+</label>
+	<description>Passive upgrade: Unlocking this ability will automatically apply its effects.\n\nNeurophagy Upgrade:\n\nNeurophagy will now grant a 2% psychic sensitivity bonus per level.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/Neurophagy+</iconPath>
+	<castTime>15</castTime>
+	<targetMode>Self</targetMode>
+	<abilityClass>SentinelFramework_STNL.Ability_PassiveGiver</abilityClass>
+		<needsTicking>true</needsTicking>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>2</level>
+			<order>2</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>70</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_NeuralScramble_STNL</li>
+			</prerequisites>
+		</li>
+		<li Class="SentinelFramework_STNL.Ability_PassiveModExt">
+			<hediffsToAdd>
+				<li>VPE_Neurophage_Neurophagy_UpgradeOne_STNL</li>
+			</hediffsToAdd>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_NeuralInfiltration_STNL</defName>
+	<label>Neural infiltration</label>
+	<description>Psychically influence the target electronics in order to bend them to the caster's will, biocoded items may be hacked to decode them.\n\nTargeting another creature within the inner targeting circle of this psycast will biocode their weapon to the caster, resulting in them losing the ability to use it.\n\nThis ability does not require line of sight to the target.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/NeuralOverload</iconPath>
+	<castTime>15</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<canTargetItems>true</canTargetItems>
+		<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+	</targetingParameters>
+	<chance>0</chance>
+	<requireLineOfSight>false</requireLineOfSight>
+	<range>28.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_NeuralInfiltration</abilityClass>
+	<castSound>Psycast_Skip_Pulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>2</level>
+			<order>3</order>
+			<psyfocusCost>0.03</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_Neurophagy_Ability_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 3 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_PsychicTakeover_STNL</defName>
+	<label>Psychic takeover</label>
+	<description>Hack the target's psylink in order to force them to self cast every psycast they currently own.\n\nThis action will cause the target to spend their psyfocus, will succeed regardless of the target's psyfocus level.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/PsychicTakeover</iconPath>
+	<castTime>60</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<!-- <chance>0</chance> -->
+	<range>24.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_PsychicTakeover</abilityClass>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>3</level>
+			<order>1</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>50</entropyGain>
+			<prerequisites>
+				<li>VPE_Neurophage_NeuralScramble_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- Used to ban various abilities that caused errors. DO NOT TOUCH THIS IF YOU DO NOT KNOW WHAT YOU ARE DOING. -->
+		<li Class="VPE_Neurophage.PsychicTakeOverModExt">
+			<bannedTypes>
+				<!-- General -->
+				<li>VEF.Abilities.Ability_SpawnBuilding</li>
+				<!-- Archon -->
+				<li>VanillaPsycastsExpanded.Ability_DrainPsyessence</li>
+				<!-- Chronopath -->
+				<li>VanillaPsycastsExpanded.Chronopath.Ability_TimeQuake</li>
+				<li>VanillaPsycastsExpanded.Chronopath.Ability_AdvanceSeason</li>
+				<li MayRequire="VPE.Extended.Sentinel">VPE_Extended.Ability_ReturnToZero</li>
+				<!-- Skipmaster -->
+				<li>VanillaPsycastsExpanded.Skipmaster.Ability_Teleport</li>
+				<li>VanillaPsycastsExpanded.Skipmaster.Ability_Skipdoor</li>
+				<!-- Necropath -->
+				<li>VanillaPsycastsExpanded.Ability_Corpsetalk</li>
+				<li>VanillaPsycastsExpanded.Ability_Resurrect</li>
+				<li>VanillaPsycastsExpanded.Ability_SpawnSkeleton</li>
+				<!-- Technomancer -->
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_IncreaseQuality</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Power</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Rock</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Steel</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_Psyring</li>
+				<li>VanillaPsycastsExpanded.Technomancer.Ability_ReverseEngineer</li>
+				<!-- Harmonist -->
+				<li>VanillaPsycastsExpanded.Harmonist.Ability_TransmuteStone</li>
+				<li>VanillaPsycastsExpanded.Harmonist.Ability_TransmuteItem</li>
+				<!-- Empath -->
+				<li>VanillaPsycastsExpanded.Ability_ReunionFarskip</li>
+				<!-- Neurophage (already handled in path ban)-->
+				<!-- <li>VPE_Neurophage.Ability_Neuralink</li> -->
+				<!-- <li>VPE_Neurophage.Ability_PsychicTheft</li> -->
+				<!-- <li>VPE_Neurophage.Ability_MassNeurophagy</li> -->
+				<!-- <li>VPE_Neurophage.Ability_NeuralInfiltration</li> -->
+				<!-- <li>VPE_Neurophage.Ability_PsychicTakeover</li> -->
+			</bannedTypes>
+			<VEFAbilityDefs>
+				<!-- Chronopath -->
+				<li>VPE_RaidPause</li>
+				<!-- Nightstalker -->
+				<li>VPE_Obscure</li>
+				<!-- Empath -->
+				<li>VPE_MindWipe</li>
+				<!-- Staticlord -->
+				<li>VPE_Flashstorm</li>
+				<!-- Harmonist -->
+				<li>VPE_Mindcontrol</li>
+			</VEFAbilityDefs>
+			<BannedPaths>
+				<li>VPE_Neurophage_STNL</li>
+			</BannedPaths>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_LeechPsyfocus_STNL</defName>
+	<label>Alter psyfocus</label>
+	<description>Psychically connect the caster to the target's psylink, allowing them to resupply or drain the target's psyfocus reserves.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/LeechPsyfocus</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<chance>0</chance>
+	<range>28.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_LeechPsyfocus</abilityClass>
+	<castSound>Psycast_WordOf_Effect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>3</level>
+			<order>2</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_NeurophagyPassiveUpgrade_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_Passive_NeuralGestalt_STNL</defName>
+	<label>Passive: Neural gestalt</label>
+	<description>Passive upgrade: Unlocking this ability will automatically apply its effects.\n\nMeditation Upgrade: Nearby allied psycasters will gain the equivalent of this person's neurophagy levels as psylink experience every few seconds.\n\nRadius: 9 Cells around self.\n\nDoes not affect this person.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/NeuralGestalt</iconPath>
+	<castTime>15</castTime>
+	<targetMode>Self</targetMode>
+	<abilityClass>SentinelFramework_STNL.Ability_PassiveGiver</abilityClass>
+		<needsTicking>true</needsTicking>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>3</level>
+			<order>3</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>70</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_NeuralInfiltration_STNL</li>
+			</prerequisites>
+		</li>
+		<li Class="SentinelFramework_STNL.Ability_PassiveModExt">
+			<hediffsToAdd>
+				<li>VPE_Neurophage_Passive_NeuralGestalt_STNL</li>
+			</hediffsToAdd>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 4 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_NeuralString_STNL</defName>
+	<label>Neural string</label>
+	<description>Assume control over another psycaster of a psylink level equal or under the caster's own level to turn them into a Neuro-Drone.\n\nThe neuro-controller will receive the neural heat of their neuro-drones and will share the following with them:\n\n-Skill Levels\n-All needs except food, sleep and Luciferium need\n-Traits\n-Ideology\n-Faction\n\nNeuro-drones will have a minimum neural heat cost to upkeep, which increases with the Drone's own psychic sensitivity and cannot go lower than 50 neural heat.\n\nThis ability will consume an amount of Neurophagy levels equal to the target's psylink level to convert the target.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/NeuralString</iconPath>
+	<castTime>60</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<chance>0</chance>
+	<range>15.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_NeuralString</abilityClass>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>4</level>
+			<order>1</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>0</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_PsychicTakeover_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_NeuralField_STNL</defName>
+	<label>Neural field</label>
+	<description>Unlock the true potential of a Neurophage for a brief moment, while in this state, all psycasts will cost 0% psyfocus and will generate 50% less neural heat.\n\nNearby allies will obtain the "Neural ripple" effect, causing their psycasts to cost 50% less psyfocus and generate 25% less neural heat. They will also regenerate 5% psyfocus per second while the caster is in this state.\n\nThis state will consume a neurophagy level per second to maintain and will kill the user if neurophagy levels hit 0 while active.\n\nRecasting this ability or becoming downed will cancel it early.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/NeuralField</iconPath>
+	<castTime>30</castTime>
+	<targetMode>Self</targetMode>
+	<!-- <targetingParameters> -->
+		<!-- <canTargetLocations>false</canTargetLocations> -->
+		<!-- <canTargetSelf>true</canTargetSelf> -->
+		<!-- <canTargetAnimals>true</canTargetAnimals> -->
+		<!-- <canTargetPawns>true</canTargetPawns> -->
+		<!-- <canTargetHumans>true</canTargetHumans> -->
+		<!-- <canTargetMechs>true</canTargetMechs> -->
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	<!-- </targetingParameters> -->
+	<chance>0</chance>
+	<range>25</range>
+	<radius>25</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_NeuralField</abilityClass>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>4</level>
+			<order>2</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>0</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_LeechPsyfocus_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_Neuralink_STNL</defName>
+	<label>Neuralink</label>
+	<description>Convert the selected amount of neurophagy levels into psylink levels, may also form a psylink connection if used on non-psycasters.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/Neuralink</iconPath>
+	<castTime>15</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<chance>0</chance>
+	<range>15.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_Neuralink</abilityClass>
+	<castSound>PsychicSoothePulserCast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>4</level>
+			<order>3</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>130</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_LeechPsyfocus_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 5 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_Transference_STNL</defName>
+	<label>Transference</label>
+	<description>Exploit a security gap in the target's psylink to forcibly override their consciousness with the caster's, resulting in both entities effectively exchanging bodies.\n\nRequires an amount of Neurophagy levels equivalent to the target's psylink level to use, cannot transfer into entities that do not have a psylink or creatures whose psylink level exceeds the caster's.\n\nNeural String Synergy: Transfering into a Neuro-Drone that the caster owns won't consume Neurophagy levels and will succeed regardless of their psylink's level.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/Transference</iconPath>
+	<castTime>90</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>false</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<chance>0</chance>
+	<range>15.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_Transference</abilityClass>
+	<castSound>Psycast_Skip_Pulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>5</level>
+			<order>1</order>
+			<psyfocusCost>0.03</psyfocusCost>
+			<entropyGain>25</entropyGain>
+			<prerequisites>
+				<li>VPE_Neurophage_NeuralString_STNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VPE_Neurophage.ModExt_Transference">
+			<allowedTransferHediffs>
+				<!-- Neurophage -->
+				<li>VPE_Neurophage_NeuralString_Controller_STNL</li>
+				<li>VPE_Neurophage_Neurophagy_STNL</li>
+				<li>VPE_Neurophage_Neurophagy_UpgradeOne_STNL</li>
+				<li>VPE_Neurophage_Passive_NeuralGestalt_STNL</li>
+				<li>VPE_Neurophage_Neurannihilation_Source_STNL</li>
+				<!-- Anomaly -->
+				<li MayRequire="Ludeon.Rimworld.Anomaly">Inhumanized</li>
+				<li MayRequire="Ludeon.Rimworld.Anomaly">VoidTouched</li>
+				<li MayRequire="Ludeon.Rimworld.Anomaly">Psychophage</li>
+				<!-- Scarlet -->
+				<li MayRequire="VPE.Scarlet.Sentinel">VPE_ScarletStasisHediffSTNL</li>
+				<li MayRequire="VPE.Scarlet.Sentinel">VPE_MechaniteFocusHediffSTNL</li>
+				<li MayRequire="VPE.Scarlet.Sentinel">VPE_ScarvestHediffSTNL</li>
+				<li MayRequire="VPE.Scarlet.Sentinel">VPE_ScarletNexusHediffSTNL</li>
+				<li MayRequire="VPE.Scarlet.Sentinel">VPE_ScarlichHediffSTNL</li>
+			</allowedTransferHediffs>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_PsychicMimicry_STNL</defName>
+	<label>Psychic mimicry</label>
+	<description>Hack the target's psylink in order to learn all of their currently owned psycasts, this ability does not raise the psylink level of the user.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/PsychicLarceny</iconPath>
+	<castTime>90</castTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>true</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetMechs>true</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<!-- <chance>0</chance> -->
+	<range>18.9</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_PsychicLarceny</abilityClass>
+	<castSound>Psycast_Skip_Pulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>5</level>
+			<order>2</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>150</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_Transference_STNL</li>
+			</prerequisites>
+		</li>
+		<!-- <li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget"> -->
+		<!-- <effecterDef>VPE_Acolyte_SignumCrucisSTNL</effecterDef> -->
+		<!-- <onCaster>true</onCaster> -->
+		<!-- <maintainForDuration>true</maintainForDuration> -->
+		<!-- <maintainForTicks>5</maintainForTicks> -->
+		<!-- </li> -->
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_MassNeurophagy_Ability_STNL</defName>
+	<label>Apex neurophagy</label>
+	<description>Wipe the psylink of every psycaster near the target point (Caster excluded) to convert their psylink levels into Neurophagy levels.\n\nNon-Psycasters will have their brain destroyed in order to grant a Neurophagy level per destroyed brain.\n\nThis ability will function on corpses in a similar way to Neurophagy.\n\nAdditionally, this ability will ignore allied creatures if there is a target that does not belong to the caster's faction within the area of effect.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/MassNeurophagy</iconPath>
+	<castTime>300</castTime>
+	<targetMode>Location</targetMode>
+	<chance>0</chance>
+	<range>14.9</range>
+	<radius>3.5</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<abilityClass>VPE_Neurophage.Ability_MassNeurophagy</abilityClass>
+	<castSound>Psycast_Skip_Entry</castSound>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetMechs>false</canTargetMechs>
+		<!-- <canTargetItems>true</canTargetItems> -->
+		<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>5</level>
+			<order>3</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>125</entropyGain>
+			<prerequisites>
+				<li>VPE_Neurophage_NeuralField_STNL</li>
+				<li>VPE_Neurophage_Neuralink_STNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 6 -->
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_EmergencyTransference_STNL</defName>
+	<label>Passive: Emergency transference</label>
+	<description>Passive upgrade: Unlocking this ability will automatically apply its effects.\n\nUpon death: Allows this Neurophage to transfer their consciousness into a linked neuro-drone to avoid their own death. The process will kill the selected neuro-drone.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/EmergencyTransference</iconPath>
+	<castTime>15</castTime>
+	<targetMode>Self</targetMode>
+	<abilityClass>SentinelFramework_STNL.Ability_PassiveGiver</abilityClass>
+		<needsTicking>true</needsTicking>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>6</level>
+			<order>1</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>70</entropyGain>
+			<prerequisites>
+			<li>VPE_Neurophage_Transference_STNL</li>
+			</prerequisites>
+		</li>
+		<li Class="SentinelFramework_STNL.Ability_PassiveModExt"/>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_NeuralNihil_STNL</defName>
+	<label>Passive: Neural nihil</label>
+	<description>Passive upgrade: Unlocking this ability will automatically apply its effects.\n\nAnalyzes and determines the dominant path across enemy psycasters, once determined, every enemy psycaster who shares the nullified path will have their consciousness suppressed and their neural heat locked to 100%.\n\nNullifies a random path if no dominant path was found.\n\nGlobal mode allows to spread the effect onto every psycaster within the region at a reduced consciousness suppression efficiency.\n\nNeurophages who possess this passive are immune to other neural nihil instances.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/NeuralNihil</iconPath>
+	<castTime>15</castTime>
+	<targetMode>Self</targetMode>
+	<abilityClass>SentinelFramework_STNL.Ability_PassiveGiver</abilityClass>
+	<needsTicking>true</needsTicking>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>6</level>
+			<order>2</order>
+			<psyfocusCost>0</psyfocusCost>
+			<entropyGain>70</entropyGain>
+			<prerequisites>
+				<li>VPE_Neurophage_PsychicMimicry_STNL</li>
+			</prerequisites>
+		</li>
+		<li Class="SentinelFramework_STNL.Ability_PassiveModExt">
+			<hediffsToAdd>
+				<li>VPE_Neurophage_Neurannihilation_Source_STNL</li>
+			</hediffsToAdd>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Neurophage_ApocalypticNeurophagy_Ability_STNL</defName>
+	<label>Apocalyptic neurophagy</label>
+	<description>After a 40 seconds meditation period, erase all psycasting knowledge from creatures in the region and obtain neurophagy levels proportional to the amount of consumed psylink levels.\n\nThe brains of affected creatures will be consumed to grant additional neurophagy levels.\n\nAllied creatures are immune to the effects of this ability.\n\nThe extreme focus required to pull off such a feat will prevent the caster from using this ability again until some time passes.</description>
+	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/ApocalypticNeurophagy</iconPath>
+	<abilityClass>VPE_Neurophage.Ability_ApocalypticNeurophagy</abilityClass>
+	<castTime>2440</castTime>
+	<!-- <cooldownTime>300000</cooldownTime> -->
+	<warmupMote>Mote_Warmup_ApocalypticNeurophagy_STNL</warmupMote>
+	<!-- <warmupStartSound>Psycast_Neuroquake_CastStart</warmupStartSound> -->
+	<warmupSound>VPE_Neurophage_ApocalypticNeurophagy_Sustainer_STNL</warmupSound>
+	<!-- <warmupPreEndSound>Psycast_Neuroquake_CastEnd</warmupPreEndSound> -->
+	<castSound>VPE_Neurophage_ApocalypticNeurophagy_CastSound_STNL</castSound>
+	<targetMode>Self</targetMode>
+	<chance>0</chance>
+	<range>0</range>
+	<radius>0</radius>
+	<needsTicking>true</needsTicking>
+	<goodwillImpact>0</goodwillImpact>
+	<!-- <targetingParameters> -->
+	<!-- <canTargetLocations>True</canTargetLocations> -->
+	<!-- <canTargetSelf>false</canTargetSelf> -->
+	<!-- <canTargetAnimals>false</canTargetAnimals> -->
+	<!-- <canTargetPawns>false</canTargetPawns> -->
+	<!-- <canTargetHumans>false</canTargetHumans> -->
+	<!-- <canTargetMechs>false</canTargetMechs> -->
+	<!-- <canTargetItems>true</canTargetItems> -->
+	<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+	<!-- </targetingParameters> -->
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_Neurophage_STNL</path>
+			<level>6</level>
+			<order>3</order>
+			<psyfocusCost>0.6</psyfocusCost>
+			<entropyGain>1000</entropyGain>
+			<prerequisites>
+				<li>VPE_Neurophage_MassNeurophagy_Ability_STNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+</Defs>

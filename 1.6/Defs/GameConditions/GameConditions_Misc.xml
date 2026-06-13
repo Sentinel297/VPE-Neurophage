@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<GameConditionDef>
+	<defName>VPE_Neurophage_NeuroDissonance_STNL</defName>
+	<conditionClass>VPE_Neurophage.GameCondition_NeuroDissonance</conditionClass>
+	<label>Neural Dissonance</label>
+	<description>Unused content.</description>
+	<letterText>Unused content.</letterText>
+	<letterDef>PositiveEvent</letterDef>
+	<!-- <weatherDef>VPE_Vein_RedMist_STNL</weatherDef> -->
+	<!-- <preventNeutralVisitors>true</preventNeutralVisitors> -->
+	<!-- <preventIncidents>true</preventIncidents> -->
+	<canAffectAllPlanetLayers>true</canAffectAllPlanetLayers>
+	<canBePermanent>true</canBePermanent>
+	<natural>false</natural>
+	<allowUnderground>true</allowUnderground>
+</GameConditionDef>
+
+</Defs>
