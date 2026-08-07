@@ -518,8 +518,8 @@
 			<path>VPE_Neurophage_STNL</path>
 			<level>5</level>
 			<order>2</order>
-			<psyfocusCost>0.10</psyfocusCost>
-			<entropyGain>50</entropyGain>
+			<psyfocusCost>0.05</psyfocusCost>
+			<entropyGain>75</entropyGain>
 			<prerequisites>
 				<li>VPE_Neurophage_NeuralString_STNL</li>
 			</prerequisites>
