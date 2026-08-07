@@ -1,6 +1,4 @@
 <LanguageData>
-	<VPE_Neurophagy_Neuralink_ChooseAmount_STNL>Choose Amount Of Charges To Use: {0}/{1}</VPE_Neurophagy_Neuralink_ChooseAmount_STNL>
-	<VPE_Neurophagy_Neuralink_Confirm_STNL>Confirm</VPE_Neurophagy_Neuralink_Confirm_STNL>
 	<!-- Neurophagy -->
 	<VPE_Neurophage_Neurophagy_ConsumeLevels_STNL>Refill psyfocus {0}/{1}</VPE_Neurophage_Neurophagy_ConsumeLevels_STNL>
 	<!-- Neural infiltration -->
@@ -10,6 +8,8 @@
 	<VPE_Neurophage_Hack_Hack_STNL>Hack</VPE_Neurophage_Hack_Hack_STNL>
 	<VPE_Neurophage_Hack_Biocode_STNL>Toggle biocoding</VPE_Neurophage_Hack_Biocode_STNL>
 	<VPE_Neurophage_NeuralString_EndControlAction_STNL>Release</VPE_Neurophage_NeuralString_EndControlAction_STNL>
+	<!-- Neural scramble -->
+	<VPE_Neurophage_NeuralScramble_Duration_STNL>Scramble duration: {0}s</VPE_Neurophage_NeuralScramble_Duration_STNL>
 	<!-- Alter psyfocus -->
 	<VPE_Neurophage_AlterPsyfocus_BestowPsyfocus_STNL>Bestow psyfocus</VPE_Neurophage_AlterPsyfocus_BestowPsyfocus_STNL>
 	<VPE_Neurophage_AlterPsyfocus_LeechPsyfocus_STNL>Leech psyfocus</VPE_Neurophage_AlterPsyfocus_LeechPsyfocus_STNL>
@@ -27,6 +27,8 @@
 	<VPE_Neurophage_NeuralNihil_GlobalMode_Toggle_STNL>Global mode: {0}</VPE_Neurophage_NeuralNihil_GlobalMode_Toggle_STNL>
 	<!-- Neuralink -->
 	<VPE_Neurophage_Neuralink_NoNeurophagyStacks_STNL>{0} has no Neurophagy levels to spend.</VPE_Neurophage_Neuralink_NoNeurophagyStacks_STNL>
+	<VPE_Neurophagy_Neuralink_ChooseAmount_STNL>Choose amount of psylink level(s) to gain: {0}\nWill use {1}/{2} Neurophagy level(s)</VPE_Neurophagy_Neuralink_ChooseAmount_STNL>
+	<VPE_Neurophagy_Neuralink_Confirm_STNL>Confirm</VPE_Neurophagy_Neuralink_Confirm_STNL>
 	<!-- Neural String -->
 	<VPE_Neurophage_NeuralString_TargetTooHighLevelForCaster_STNL>{0}'s psylink level is superior to {1}'s psylink level.</VPE_Neurophage_NeuralString_TargetTooHighLevelForCaster_STNL>
 	<VPE_Neurophage_NeuralString_NeurophagyStacksTooLow_STNL>{0} doesn't have enough neurophagy levels to control {1}.</VPE_Neurophage_NeuralString_NeurophagyStacksTooLow_STNL>
@@ -34,15 +36,29 @@
 	<!-- Emergency Transference -->
 	<VPE_Neurophage_EmergencyTransference_PawnDied_STNL>/!\ {0} has died, {1} may select a Neuro-drone to possess. /!\</VPE_Neurophage_EmergencyTransference_PawnDied_STNL>
 	<VPE_Neurophage_EmergencyTransference_Header_STNL>Select a Neuro-Drone to transfer into:</VPE_Neurophage_EmergencyTransference_Header_STNL>
-	<!-- Settings -->
+	<!-- Neural control -->
+	<VPE_Neurophage_RecallDrone_Label_STNL>Recall menu</VPE_Neurophage_RecallDrone_Label_STNL>
+	<VPE_Neurophage_RecallMenu_Title_STNL>Select a Neuro-drone to recall:</VPE_Neurophage_RecallMenu_Title_STNL>
+	<VPE_Neurophage_RecallMenu_WarpIn_STNL>Skip {0} (Cost: {1}/{2} Neurophagy level(s))</VPE_Neurophage_RecallMenu_WarpIn_STNL>
+	<VPE_Neurophage_RecallMenu_WarpTo_STNL>Skip to</VPE_Neurophage_RecallMenu_WarpTo_STNL>
+	<!-- ===Settings=== -->
 	<VPE_Neurophage_Neurophagy_STNL>Neurophagy Skills:</VPE_Neurophage_Neurophagy_STNL>
 	<VPE_Neurophagy_NeurophagyGoodwillDrop_STNL>Using Neurophagy or Apex neurophagy on live creatures will lower goodwill with their faction by {0} goodwill.</VPE_Neurophagy_NeurophagyGoodwillDrop_STNL>
 	<VPE_Neurophage_NeurophagyRegenCost_STNL>Neurophagy: level(s) required to fully regenerate psyfocus: {0}</VPE_Neurophage_NeurophagyRegenCost_STNL>
+	<!-- Gestalt -->
 	<VPE_Neurophage_GestaltSettings_STNL>Neural Gestalt:</VPE_Neurophage_GestaltSettings_STNL>
 	<VPE_Neurophage_GestaltEfficiency_STNL>Neural gestalt XP efficiency: {0}% (1 = 100%)</VPE_Neurophage_GestaltEfficiency_STNL>
+	<!-- Neural string -->
+	<VPE_Neurophage_NeuralString_STNL>Neural String:</VPE_Neurophage_NeuralString_STNL>
+	<VPE_Neurophage_NeuralString_WarpInCost_STNL>Warp/Drone recall charge cost: {0}</VPE_Neurophage_NeuralString_WarpInCost_STNL>
+	<!-- Neuralink -->
+	<VPE_Neurophage_Neuralink_STNL>Neuralink:</VPE_Neurophage_Neuralink_STNL>
+	<VPE_Neurophage_Neuralink_NeurophagyLevelCost_STNL>Neurophagy level cost per psylink level: {0}</VPE_Neurophage_Neuralink_NeurophagyLevelCost_STNL>
+	<!-- Transference -->
 	<VPE_Neurophage_TransferenceSettings_STNL>Transference:</VPE_Neurophage_TransferenceSettings_STNL>
 	<VPE_Neurophage_TransferenceLethargyStageTwoDuration_STNL>Lethargy: coma stage duration: {0} ticks (60 = 1 sec, 2500 = 1 hour, 60000 = 1 day)</VPE_Neurophage_TransferenceLethargyStageTwoDuration_STNL>
 	<VPE_Neurophage_TransferenceLethargyStageOneDuration_STNL>Lethargy: reduced motor skills stage duration: {0} ticks (60 = 1 sec, 2500 = 1 hour, 60000 = 1 day)</VPE_Neurophage_TransferenceLethargyStageOneDuration_STNL>
+	<!-- Apocalyptic neurophagy -->
 	<VPE_Neurophage_ApocalypticNeurophagy_STNL>Apocalyptic Neurophagy:</VPE_Neurophage_ApocalypticNeurophagy_STNL>
 	<VPE_Neurophage_ApocalypticNeurophagy_GoodwillCost_STNL>Goodwill loss with all factions per cast: {0} goodwill.</VPE_Neurophage_ApocalypticNeurophagy_GoodwillCost_STNL>
 	<VPE_Neurophage_ApocalypticNeurophagy_CooldownTime_STNL>Cooldown: {0} day(s)</VPE_Neurophage_ApocalypticNeurophagy_CooldownTime_STNL>

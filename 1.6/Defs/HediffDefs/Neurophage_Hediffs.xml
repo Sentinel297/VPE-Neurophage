@@ -1,36 +1,6 @@
 <Defs>
-<HediffDef>
-	<defName>VPE_Neurophage_NeuralScrambleSTNL</defName>
-	<label>Neural scramble</label>
-	<description>This creature's neural system is being tampered with, it will be stunned every few seconds.</description>
-	<hediffClass>VPE_Neurophage.Hediff_NeuralScramble</hediffClass>
-	<initialSeverity>1</initialSeverity>
-	<minSeverity>0</minSeverity>
-	<maxSeverity>1</maxSeverity>
-	<!-- <lethalSeverity>1</lethalSeverity> -->
-	<defaultLabelColor>(0, 0.6, 0)</defaultLabelColor>
-	<makesSickThought>false</makesSickThought>
-	<scenarioCanAdd>false</scenarioCanAdd>
-	<isBad>false</isBad>
-	<everCurableByItem>false</everCurableByItem>
-	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
-	<modExtensions>
-	</modExtensions>
-	<stages>
-		<li>
-			<!-- <statFactors> -->
-				<!-- <Fertility>0</Fertility> -->
-			<!-- </statFactors> -->
-		</li>
-	</stages>
-	<comps>
-		<li Class="HediffCompProperties_DisappearsOnDeath"/>
-		<li Class="HediffCompProperties_Disappears">
-		<disappearsAfterTicks>20000</disappearsAfterTicks>
-		<showRemainingTime>true</showRemainingTime>
-		</li>
-	</comps>
-</HediffDef>
+
+<!-- Neurophagy -->
 
 <HediffDef>
 	<defName>VPE_Neurophage_Neurophagy_STNL</defName>
@@ -96,6 +66,109 @@
 					</valueBySeverity>
 				</li>
 			</statOffsetsBySeverity>
+		</li>
+	</stages>
+	<comps>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>20000</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>true</showRemainingTime> -->
+		<!-- </li> -->
+	</comps>
+</HediffDef>
+
+<!-- Neural Scramble -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_NeuralScrambleSTNL</defName>
+	<label>Neural scramble</label>
+	<description>This creature's neural system is being tampered with, it will be stunned every few seconds.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralScramble</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 0.6, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<!-- <statFactors> -->
+				<!-- <Fertility>0</Fertility> -->
+			<!-- </statFactors> -->
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li Class="HediffCompProperties_Disappears">
+		<disappearsAfterTicks>20000</disappearsAfterTicks>
+		<showRemainingTime>true</showRemainingTime>
+		</li>
+	</comps>
+</HediffDef>
+
+<!-- Psionic Disruption -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_PsionicDisruption_Hediff_STNL</defName>
+	<label>Psionic disruption</label>
+	<description>This creature's body is getting blasted with psionic radiations, causing it to become more susceptible to trauma and lesions.\n\nPsychic invisibility fields will fail to conceal this creature.</description>
+	<hediffClass>VPE_Neurophage.Hediff_PsionicDisruption</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 0.6, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions/>
+	<stages>
+		<li>
+			<!-- <statFactors> -->
+				<!-- <IncomingDamageFactor>1.5</IncomingDamageFactor> -->
+			<!-- </statFactors> -->
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li Class="HediffCompProperties_Disappears">
+		<disappearsAfterTicks>20000</disappearsAfterTicks>
+		<showRemainingTime>true</showRemainingTime>
+		</li>
+	</comps>
+</HediffDef>
+
+<!-- Neural Engine -->
+
+<HediffDef>
+	<defName>VPE_Neurophage_Neurodrive_Hediff_STNL</defName>
+	<label>Neural engine</label>
+	<description>Neural heat no longer triggers psychic breakdowns and now increases this creature's consciousness and movement speed as it ramps up.\n\nExceeding safe levels of neural heat will cause this creature to sustain damage scaling with neural heat until downed or death.\n\nNeural heat will return to safe levels once this creature is downed.</description>
+	<hediffClass>VPE_Neurophage.Hediff_NeuralEngine</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions/>
+	<stages>
+		<li>
+			<!-- <statFactors> -->
+				<!-- <IncomingDamageFactor>1.5</IncomingDamageFactor> -->
+			<!-- </statFactors> -->
 		</li>
 	</stages>
 	<comps>
