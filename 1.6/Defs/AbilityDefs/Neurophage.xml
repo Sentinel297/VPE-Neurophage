@@ -60,6 +60,7 @@
 	<label>Neural scramble</label>
 	<description>Emit psychic radiation that will periodically confuse the target, resulting in them getting stunned every few seconds for a while.</description>
 	<iconPath>UI_NeurophageSTNL/Abilities/Neurophage/Ability_NeuralScramble</iconPath>
+	<durationTime>7500</durationTime>
 	<castTime>15</castTime>
 	<targetMode>Pawn</targetMode>
 	<targetingParameters>
