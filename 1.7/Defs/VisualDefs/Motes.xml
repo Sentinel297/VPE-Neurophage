@@ -1,0 +1,42 @@
+<Defs>
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Warmup_ApocalypticNeurophagy_STNL</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>1.0</fadeInTime>
+      <fadeOutTime>0.2</fadeOutTime>
+      <solidTime>99999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MotePsychicWarmupNeuroquake</shaderType>
+      <texPath>Things/Mote/PsychicDistortionCurrents</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.7</_distortionIntensity>
+        <_brightnessMultiplier>1.7</_brightnessMultiplier>
+        <_pulseSpeed>1.5</_pulseSpeed>
+      </shaderParameters>
+      <drawSize>60.0</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+    <FleckDef ParentName="FleckGlowDistortBackground" Name="FleckPsycastAreaEffect">
+    <defName>VPE_Neurophage_ApocalypticNeurophagy_CastFleck_STNL</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>0.02</fadeInTime>
+    <fadeOutTime>0.6</fadeOutTime>
+    <solidTime>5</solidTime>
+    <growthRate>-1</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.25</_distortionIntensity>
+        <_brightnessMultiplier>1.7</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>360</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+</Defs>
