@@ -26,7 +26,7 @@
 	<VPE_Neurophage_NeuralNihil_GlobalModeDesc_STNL>Global mode allows neural nihil to suppress every psycaster in the same region as this Neurophage.\n\nHowever, spreading this effect to many targets comes at the cost of a reduced consciousness suppression efficiency.</VPE_Neurophage_NeuralNihil_GlobalModeDesc_STNL>
 	<VPE_Neurophage_NeuralNihil_GlobalMode_Toggle_STNL>Global mode: {0}</VPE_Neurophage_NeuralNihil_GlobalMode_Toggle_STNL>
 	<!-- Neuralink -->
-	<VPE_Neurophage_Neuralink_NoNeurophagyStacks_STNL>{0} has no Neurophagy levels to spend.</VPE_Neurophage_Neuralink_NoNeurophagyStacks_STNL>
+	<VPE_Neurophage_Neuralink_NoNeurophagyStacks_STNL>{0} doesn't have enough Neurophagy levels to spend. ({1} required)</VPE_Neurophage_Neuralink_NoNeurophagyStacks_STNL>
 	<VPE_Neurophagy_Neuralink_ChooseAmount_STNL>Choose amount of psylink level(s) to gain: {0}\nWill use {1}/{2} Neurophagy level(s)</VPE_Neurophagy_Neuralink_ChooseAmount_STNL>
 	<VPE_Neurophagy_Neuralink_Confirm_STNL>Confirm</VPE_Neurophagy_Neuralink_Confirm_STNL>
 	<!-- Neural String -->

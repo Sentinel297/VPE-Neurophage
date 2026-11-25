@@ -321,7 +321,7 @@
 <HediffDef>
 	<defName>VPE_Neurophage_NeuralString_Controlled_STNL</defName>
 	<label>Neuro-drone</label>
-	<description>This Psycaster is under the influence of a Neurophage and will receive the following from the latter:\n\n-Skill Levels\n-All needs except food, sleep and Luciferium need\n-Traits\n-Ideology\n-Faction\n\nThis Drone will share their current neural heat with their Neuro-Controller.\n\nThis Neuro-Drone's neural heat cost will increase as its psychic sensitivity increases.</description>
+	<description>This Psycaster is under the influence of a Neurophage and will receive the following from the latter:\n\n-Skill Levels\n-All needs except food, sleep and Luciferium need\n-Traits\n-Ideology\n-Faction\n\nThis Neuro-Drone's neural heat cost will increase as its psychic sensitivity increases.</description>
 	<hediffClass>VPE_Neurophage.Hediff_NeuralControl</hediffClass>
 	<initialSeverity>1</initialSeverity>
 	<minSeverity>0</minSeverity>
@@ -346,6 +346,9 @@
 			</statFactors>
 			<disablesNeeds>
 				<li>Joy</li>
+				<li>Mood</li>
+				<li>Comfort</li>
+				<li>Beauty</li>
 			</disablesNeeds>
 		</li>
 	</stages>
